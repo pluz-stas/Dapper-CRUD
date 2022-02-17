@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Survalyzer.Interview.Server</name>
+    </assembly>
+    <members>
+        <member name="M:Survalyzer.Interview.Server.Controllers.TaskController.GetAsync(System.Int32,System.Int32)">
+            <summary>
+            Gets tasks asynchronously.
+            </summary>
+            <param name="skip">Presents data for pagination.</param>
+            <param name="take">Presents data for pagination.</param>
+            <returns><see cref="T:System.Collections.Generic.IEnumerable`1"/>Collection of tasks.</returns>
+            <response code="200">Returns tasks.</response>
+            <response code="500">There are any server problems.</response>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Controllers.TaskController.GetAsync(System.Int32)">
+            <summary>
+            Gets task by id.
+            </summary>
+            <param name="id">Task id.</param>
+            <returns>Instance of <see cref="T:Survalyzer.Interview.Server.Contracts.TaskContract"/>.</returns>
+            <response code="200">Returns task.</response>       
+            <response code="404">A task not found.</response>
+            <response code="500">There are any server problems.</response>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Controllers.TaskController.Post(Survalyzer.Interview.Server.Contracts.CreateTaskContract)">
+            <summary>
+            Creates a task.
+            </summary>
+            <param name="createTaskContract">Task model.</param>
+            <returns>A newly created task.</returns>
+            <response code="201">Returns the newly created task.</response>
+            <response code="400">If the item is null</response>        
+            <response code="500">There are any server problems.</response>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Controllers.TaskController.Put(System.Int32,Survalyzer.Interview.Server.Contracts.EditTaskContract)">
+            <summary>
+            Updates existent task.
+            </summary>
+            <param name="id">Existent task id.</param>
+            <param name="contract">Updated task model.</param>
+            <response code="204">Returns NoContent response.</response>
+            <response code="400">If the model is null or id does not match the task model.</response>  
+            <response code="404">A task not found.</response>
+            <response code="500">There are any server problems.</response>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Controllers.TaskController.Delete(System.Int32)">
+            <summary>
+            Deletes existent task.
+            </summary>
+            <param name="id">Existent task id.</param>
+            <response code="204">Returns NoContent response.</response>
+            <response code="404">A task not found.</response>
+            <response code="500">There are any server problems.</response>
+        </member>
+        <member name="T:Survalyzer.Interview.Server.Extensions.TaskExtensions">
+            <summary>
+            Extensions for task models.
+            </summary>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Extensions.TaskExtensions.ToContract(Survalyzer.Interview.Interfaces.Entity.TaskRecord)">
+            <summary>
+            Converts <see cref="T:Survalyzer.Interview.Interfaces.Entity.TaskRecord"/> model to <seealso cref="T:Survalyzer.Interview.Server.Contracts.TaskContract"/> contract.
+            </summary>
+            <param name="model">Task model.</param>
+            <returns><see cref="T:Survalyzer.Interview.Server.Contracts.TaskContract"/> contract.</returns>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Extensions.TaskExtensions.ToShortInfoContract(Survalyzer.Interview.Interfaces.Entity.TaskRecord)">
+            <summary>
+            Converts <see cref="T:Survalyzer.Interview.Interfaces.Entity.TaskRecord"/> model to <seealso cref="T:Survalyzer.Interview.Server.Contracts.ShortTaskInfoContract"/> contract.
+            </summary>
+            <param name="model">Task model.</param>
+            <returns><see cref="T:Survalyzer.Interview.Server.Contracts.ShortTaskInfoContract"/> contract.</returns>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Extensions.TaskExtensions.ToEntity(Survalyzer.Interview.Server.Contracts.CreateTaskContract)">
+            <summary>
+            Converts <see cref="T:Survalyzer.Interview.Server.Contracts.CreateTaskContract"/> contract to <seealso cref="T:Survalyzer.Interview.Interfaces.Entity.TaskRecord"/> model.
+            </summary>
+            <param name="contract">Task contract.</param>
+            <returns><see cref="T:Survalyzer.Interview.Interfaces.Entity.TaskRecord"/> model.</returns>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Extensions.TaskExtensions.ToEntity(Survalyzer.Interview.Server.Contracts.EditTaskContract)">
+            <summary>
+            Converts <see cref="T:Survalyzer.Interview.Server.Contracts.EditTaskContract"/> contract to <seealso cref="T:Survalyzer.Interview.Interfaces.Entity.TaskRecord"/> model.
+            </summary>
+            <param name="contract">Task contract.</param>
+            <returns><see cref="T:Survalyzer.Interview.Interfaces.Entity.TaskRecord"/> model.</returns>
+        </member>
+        <member name="M:Survalyzer.Interview.Server.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="configuration">Application configuration.</param>
+        </member>
+        <member name="P:Survalyzer.Interview.Server.Startup.Configuration">
+            <summary>
+            Gets application configuration.
+            </summary>
+        </member>
+    </members>
+</doc>

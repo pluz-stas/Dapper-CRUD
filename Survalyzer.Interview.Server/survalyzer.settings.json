@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rcnull\\Desktop\\SurvalyzerTask\\Survalyzer.Interview.Repository\\Survalyzer.Tasks.mdf;Integrated Security=True"
+  }
+}
